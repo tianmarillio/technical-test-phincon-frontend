@@ -14,7 +14,7 @@ const Pagination = () => {
   }
 
   return (
-    <div className="flex items-center justify-between gap-2 overflow-y-scroll px-8 bg-red-50">
+    <div className="flex items-center justify-between gap-2 overflow-y-scroll bg-red-50 px-8">
       {prevPage ? (
         <button
           onClick={changePage(currentPage - 1)}

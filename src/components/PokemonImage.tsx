@@ -1,7 +1,7 @@
-import { FC, HTMLAttributes } from 'react';
+import { FC, HTMLAttributes } from 'react'
 
 interface PokemonImage extends HTMLAttributes<HTMLImageElement> {
-  pokemonId: number;
+  pokemonId: number
 }
 
 const PokemonImage: FC<PokemonImage> = ({ pokemonId, ...props }) => {
@@ -13,7 +13,7 @@ const PokemonImage: FC<PokemonImage> = ({ pokemonId, ...props }) => {
       width={96}
       {...props}
     />
-  );
-};
+  )
+}
 
-export default PokemonImage;
+export default PokemonImage

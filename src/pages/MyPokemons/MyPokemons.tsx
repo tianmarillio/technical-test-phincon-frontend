@@ -22,7 +22,7 @@ const MyPokemons = () => {
     return () => {
       dispatch(resetReleasePokemon())
     }
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (!isReleasing) {
@@ -46,13 +46,13 @@ const MyPokemons = () => {
     }
 
     dispatch(resetReleasePokemon())
-  }, [isReleasing, isPrimeNumber])
+  }, [isReleasing, isPrimeNumber, dispatch, releaseNumber])
 
   return (
     <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem]">
-      <Header></Header>
+      <Header />
 
-      <main className="grid auto-rows-[12rem] gap-2 overflow-y-scroll px-4 py-4 md:grid-cols-2 md:px-8 2xl:grid-cols-4">
+      <main className="grid auto-rows-[12rem] gap-2 overflow-y-scroll p-4 md:grid-cols-2 md:px-8 2xl:grid-cols-4">
         {myPokemons
           .map((myPokemon) => {
             return {
@@ -64,12 +64,12 @@ const MyPokemons = () => {
           })
 
           .map((myPokemon, i) => {
-            return <MyPokemonCard key={i} {...myPokemon}></MyPokemonCard>
+            return <MyPokemonCard key={i} {...myPokemon} />
           })}
       </main>
 
-      <BottomNavigation active='my_pokemon'></BottomNavigation>
-      </div>
+      <BottomNavigation active="my_pokemon" />
+    </div>
   )
 }
 

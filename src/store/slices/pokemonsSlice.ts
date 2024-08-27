@@ -54,11 +54,11 @@ export const pokemonSlice = createSlice({
         state.nextPage = action.payload.next ? state.currentPage + 1 : null
         state.prevPage = action.payload.previous ? state.currentPage - 1 : null
       })
-      .addCase(getPokemonList.rejected, (state, action) => {
+      .addCase(getPokemonList.rejected, (state) => {
         state.loading = false
         state.error = 'Failed to fetch pokemon list'
       })
-      
+
       // action: pokemon/getPokemonDetail
       .addCase(getPokemonDetail.pending, (state) => {
         state.loading = true
@@ -78,7 +78,7 @@ export const pokemonSlice = createSlice({
         state.loading = false
         state.selectedPokemonDetail = pokemonDetail
       })
-      .addCase(getPokemonDetail.rejected, (state, action) => {
+      .addCase(getPokemonDetail.rejected, (state) => {
         state.loading = false
         state.error = 'Failed to fetch pokemon details'
       })

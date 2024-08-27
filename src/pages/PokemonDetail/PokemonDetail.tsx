@@ -1,36 +1,36 @@
-import BottomNavigation from '@/components/BottomNavigation';
-import Header from '@/components/Header';
-import PokemonImage from '@/components/PokemonImage';
-import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { useAppSelector } from '@/hooks/useAppSelector';
-import { getPokemonDetail } from '@/store/slices/pokemonSlice.actions';
-import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import CatchSection from './CatchSection';
+import BottomNavigation from '@/components/BottomNavigation'
+import Header from '@/components/Header'
+import PokemonImage from '@/components/PokemonImage'
+import { useAppDispatch } from '@/hooks/useAppDispatch'
+import { useAppSelector } from '@/hooks/useAppSelector'
+import { getPokemonDetail } from '@/store/slices/pokemonSlice.actions'
+import { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import CatchSection from './CatchSection'
 
 const PokemonDetail = () => {
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const { id: idStr } = useParams();
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const { id: idStr } = useParams()
 
-  const id = Number(idStr);
+  const id = Number(idStr)
 
   const selectedPokemonDetail = useAppSelector(
     (state) => state.pokemon.selectedPokemonDetail,
-  );
-  const loading = useAppSelector((state) => state.pokemon.loading);
+  )
+  const loading = useAppSelector((state) => state.pokemon.loading)
 
   useEffect(() => {
     if (!id) {
-      return navigate('/');
+      return navigate('/')
     }
 
-    dispatch(getPokemonDetail(id));
-  }, [id]);
+    dispatch(getPokemonDetail(id))
+  }, [id, dispatch, navigate])
 
   return (
     <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem_4rem]">
-      <Header></Header>
+      <Header />
 
       <main className="gap-2 space-y-8 overflow-y-scroll px-2 py-4">
         {loading ? (
@@ -55,11 +55,11 @@ const PokemonDetail = () => {
         )}
       </main>
 
-      <CatchSection></CatchSection>
+      <CatchSection />
 
-      <BottomNavigation></BottomNavigation>
+      <BottomNavigation />
     </div>
-  );
-};
+  )
+}
 
-export default PokemonDetail;
+export default PokemonDetail

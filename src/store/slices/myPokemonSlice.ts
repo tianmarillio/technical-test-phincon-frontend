@@ -66,7 +66,7 @@ export const myPokemonSlice = createSlice({
         state.loading = true
         state.error = null
       })
-      .addCase(createMyPokemon.fulfilled, (state, action) => {
+      .addCase(createMyPokemon.fulfilled, (state) => {
         state.loading = false
         state.creatingPokemonId = null
         state.isCatched = false
@@ -111,7 +111,7 @@ export const myPokemonSlice = createSlice({
         state.loading = true
         state.error = null
       })
-      .addCase(renamePokemon.fulfilled, (state, action) => {
+      .addCase(renamePokemon.fulfilled, (state) => {
         state.loading = false
       })
       .addCase(renamePokemon.rejected, (state) => {

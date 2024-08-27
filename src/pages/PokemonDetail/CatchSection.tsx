@@ -5,7 +5,7 @@ import {
   catchPokemon,
   createMyPokemon,
 } from '@/store/slices/myPokemonSlice.actions'
-import {  FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
@@ -51,13 +51,13 @@ const CatchSection = () => {
 
       return
     }
-  }, [creatingPokemonId, isCatched])
+  }, [creatingPokemonId, isCatched, dispatch, selectedPokemonDetail?.name])
 
   useEffect(() => {
     return () => {
       dispatch(resetPokemonCatch())
     }
-  }, [])
+  }, [dispatch])
 
   const handleClick = () => {
     if (!selectedPokemonDetail?.id) {

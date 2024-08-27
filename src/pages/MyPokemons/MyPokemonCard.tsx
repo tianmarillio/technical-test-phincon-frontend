@@ -4,7 +4,7 @@ import {
   releasePokemon,
   renamePokemon,
 } from '@/store/slices/myPokemonSlice.actions'
-import React, { FC, FormEvent, useEffect, useState } from 'react'
+import { FC, FormEvent, useState } from 'react'
 
 interface MyPokemonCardProps {
   id: number
