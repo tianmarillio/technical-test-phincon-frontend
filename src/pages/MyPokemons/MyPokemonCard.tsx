@@ -42,7 +42,7 @@ const MyPokemonCard: FC<MyPokemonCardProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-[6rem_1fr] gap-4 rounded-lg border-2 border-red-600 bg-white p-4">
+    <div className="grid grid-cols-[6rem_1fr] gap-4 rounded-lg border-4 border-red-600 bg-white p-4">
       <div className="flex flex-col">
         <div>#{pokemonId}</div>
         <div className="mb-4 mt-auto">

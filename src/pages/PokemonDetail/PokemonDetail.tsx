@@ -29,19 +29,19 @@ const PokemonDetail = () => {
   }, [id]);
 
   return (
-    <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem_4rem] bg-red-100">
+    <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem_4rem]">
       <Header></Header>
 
-      <main className="gap-2 space-y-8 overflow-y-scroll bg-blue-100 px-2 py-4">
+      <main className="gap-2 space-y-8 overflow-y-scroll px-2 py-4">
         {loading ? (
           <div>Loading...</div>
         ) : (
           <>
-            <div className="size-24 bg-red-100 p-1">
+            <div className="size-24 p-1">
               <PokemonImage pokemonId={id} />
             </div>
 
-            <div className="grid grid-cols-[5rem_1fr] gap-x-4 gap-y-2 bg-red-100">
+            <div className="grid grid-cols-[5rem_1fr] gap-x-4 gap-y-2">
               <div className="font-bold text-red-600">ID</div>
               <div>{selectedPokemonDetail?.id}</div>
               <div className="font-bold text-red-600">Name</div>

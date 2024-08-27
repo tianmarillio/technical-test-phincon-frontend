@@ -87,7 +87,7 @@ const CatchSection = () => {
   }
 
   return (
-    <div className="flex items-center justify-between gap-2 overflow-y-scroll bg-red-100 px-2">
+    <div className="flex items-center justify-between gap-2 overflow-y-scroll px-2">
       {creatingPokemonId && isCatched ? (
         <form
           className="flex w-full items-center gap-x-4 text-sm"

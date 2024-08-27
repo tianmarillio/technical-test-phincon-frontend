@@ -49,10 +49,10 @@ const MyPokemons = () => {
   }, [isReleasing, isPrimeNumber])
 
   return (
-    <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem] bg-red-100">
+    <div className="container mx-auto grid h-screen grid-rows-[4rem_1fr_4rem]">
       <Header></Header>
 
-      <main className="grid auto-rows-[12rem] gap-2 overflow-y-scroll bg-blue-800 px-2 py-4 md:grid-cols-2 2xl:grid-cols-4">
+      <main className="grid auto-rows-[12rem] gap-2 overflow-y-scroll px-4 py-4 md:grid-cols-2 md:px-8 2xl:grid-cols-4">
         {myPokemons
           .map((myPokemon) => {
             return {
@@ -68,8 +68,8 @@ const MyPokemons = () => {
           })}
       </main>
 
-      <BottomNavigation></BottomNavigation>
-    </div>
+      <BottomNavigation active='my_pokemon'></BottomNavigation>
+      </div>
   )
 }
 

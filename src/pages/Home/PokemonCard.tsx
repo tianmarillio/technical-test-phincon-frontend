@@ -11,14 +11,14 @@ interface PokemonCardProps {
 const PokemonCard: FC<PokemonCardProps> = ({ id, name, imageUrl }) => {
   return (
     <Link to={`/details/${id}`}>
-      <div className="grid cursor-pointer grid-cols-[4rem_4rem_1fr] gap-2 rounded-lg bg-red-100 p-2">
-        <div className="bg-green-100">#{id}</div>
+      <div className="grid cursor-pointer grid-cols-[4rem_4rem_1fr] gap-2 rounded-lg p-2 border-2 border-red-900 items-center">
+        <div className="">#{id}</div>
 
-        <div className="size-12 rounded-full bg-blue-100 p-1">
+        <div className="size-12 rounded-full p-1">
           <PokemonImage pokemonId={id}></PokemonImage>
         </div>
 
-        <div className="text-sm">{name}</div>
+        <div className="font-bold">{name}</div>
       </div>
     </Link>
   );
