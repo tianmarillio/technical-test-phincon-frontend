@@ -90,7 +90,7 @@ const CatchSection = () => {
     <div className="flex items-center justify-between gap-2 overflow-y-scroll px-2">
       {creatingPokemonId && isCatched ? (
         <form
-          className="flex w-full items-center gap-x-4 text-sm"
+          className="flex w-full items-center gap-x-4 text-xl"
           onSubmit={handleSubmit}
         >
           <div className="flex-1">
@@ -99,12 +99,12 @@ const CatchSection = () => {
               name="nickname"
               value={nickname}
               placeholder="Enter a nickname"
-              className="size-full rounded-lg px-4 py-1"
+              className="size-full rounded-lg border-2 border-black px-4 py-2"
               onChange={(e) => setNickname(e.target.value)}
             />
           </div>
 
-          <button className="rounded-lg bg-red-600 px-4 py-1 font-bold text-white">
+          <button className="rounded-lg bg-red-600 px-4 py-2 font-bold text-white">
             Submit
           </button>
         </form>
